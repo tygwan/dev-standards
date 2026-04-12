@@ -49,6 +49,7 @@
 | **R7** | [Issue classification](rules/R7-issue-classification.md) | 🟡 SHOULD | Severity/Status vocabulary 통일 |
 | **R8** | [Human-AI collaboration](rules/R8-human-ai-collaboration.md) | 🟡 SHOULD | Trade-off 분석, escalation, Claude Code 메모리 규칙 |
 | **R9** | [Provenance and reproducibility](rules/R9-provenance-reproducibility.md) | 🟡 SHOULD | 외부 의존성 버전 고정, 재현 가능한 audit |
+| **R10** | [Decision validation (A/B testing)](rules/R10-decision-validation.md) | 🟡 SHOULD | 측정 가능한 결정은 A/B 실험으로 검증 후 채택 |
 
 ### 강도 (Rule Strength)
 
@@ -80,6 +81,8 @@ R3 Finding archival
 
 R4 Decision records + R8 Human-AI collab
   └── 구조적 결정은 trade-off 분석 후 기록
+        ↓
+        └── R10 측정 가능하면 A/B 검증 → 노트북 증거 보존
 
 R6 External deps + R7 Issue classification
   └── 외부 repo 이슈에 severity 부여
@@ -160,7 +163,7 @@ standards_version: 0.1.0
 - **PR**: 명확한 개선 제안
 
 각 PR 은 다음을 포함해야 함:
-- 어느 규칙 (R1~R9) 이 영향 받는지
+- 어느 규칙 (R1~R10) 이 영향 받는지
 - CHANGELOG 업데이트
 - 영향받는 프로젝트에 대한 migration 가이드 (breaking change 시)
 
