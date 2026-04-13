@@ -7,6 +7,24 @@ Versioning: [Semver](https://semver.org/) with pragmatic interpretation.
 
 ---
 
+## [0.3.0] — 2026-04-14
+
+### Added
+
+- `rules/R11-portfolio-writing.md` — Portfolio / External Writing rule (🟢 MAY)
+  - First MAY rule in the catalog; applies only when presenting a project to an external audience
+  - PAAR structure (Problem, Analyze, Action, Result) as the organizing lens
+  - Two-part narrative: Context and Value (Part 1) + Implementation (Part 2)
+  - Task-over-tech content focus: the story must stand when the tech stack is removed
+  - Visual Asset Checklist (9 types, tiered by commonality)
+  - Role-based tech stack classification
+  - Writing style rules: complete sentences, no arrow notation in prose, specific metrics
+  - Enrichment sections for operational experience (incidents, optimization) and open source contributions
+- `STANDARDS.md` updated: 10 Rules → 11 Rules, version bumped to v0.3.0
+- Meta rule diagram updated to show R11 as downstream of R1/R4/R10 (internal docs feeding external writing)
+
+---
+
 ## [0.2.0] — 2026-04-13
 
 ### Added
