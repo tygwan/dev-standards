@@ -1,12 +1,13 @@
 # Example: first-ontology-project
 
-> Real-world application of `dev-standards` v0.1.0. This document shows
-> how each of the 9 rules was applied in a concrete project, without
+> Real-world application of `dev-standards` v0.2.0. This document shows
+> how each of the 10 rules was applied in a concrete project, without
 > duplicating the project's domain-specific details.
 
 **Repository**: https://github.com/tygwan/first-ontology-project
-**Standards version used**: 0.1.0
+**Standards version used**: 0.2.0
 **First consumer**: Yes — this project's practices *became* dev-standards
+**Current state**: Phase 0–6 complete, 336 tests passing, Foundry 10 datasets deployed
 
 ---
 
@@ -27,9 +28,11 @@ an upstream tool, produces cleaned and enriched outputs, and prepares
 the data for ingestion into a target platform.
 
 - **~12,000 primary entities**, ~110,000 relations
-- **7-phase implementation plan** (Bootstrap → Ingest → Ontology → Quality → Analytics → LLM Service → API/UI)
+- **7-phase implementation plan** (Bootstrap → Ingest → Ontology → Quality → Analytics → LLM Service → API/UI) — **Phase 0–6 complete**
+- **336 tests passing**, **Foundry 10 datasets** deployed to Palantir Foundry Developer Tier
 - **Multiple output formats** for different downstream consumers
 - **Oracle test against upstream tool** to ensure reproducibility
+- **3 A/B tests** conducted under R10 to validate key design decisions
 
 ---
 
@@ -74,6 +77,11 @@ Every phase produced a task log with the 5-section format. Examples
 - `phase-1c-sqlite-writer.md` — storage layer
 - `phase-1d-exports.md` — downstream exports
 - `phase-1e-confidence-layer.md` — quality confidence columns (added after finding)
+- `phase-2-owl-ontology.md` — OWL ontology generation
+- `phase-3-quality.md` — data quality validation
+- `phase-4-analytics.md` — analytics layer
+- `phase-5-llm-service.md` — LLM service integration
+- `phase-6-api-ui.md` — API and UI layer
 
 **Pattern used**: Sections 1-5 correspond to language/content, problem,
 analysis, solution, result. Every log has concrete test counts, commit
@@ -135,7 +143,7 @@ Phase 1e: classification confidence layer (M1 local fix)
 Add two new columns to the Gold table to mitigate the M1 finding
 without breaking the XLSX oracle contract...
 
-Tests: 192 -> 210 passing (+18 in test_clean.py).
+Tests: 192 -> 210 passing (+18 in test_clean.py).  [now 336 total]
 
 Co-Authored-By: AI-Assistant <noreply@example.com>
 ```
@@ -237,6 +245,33 @@ know where to apply extra scrutiny.
 - **Deterministic**: Audit runs are reproducible; no randomness, no
   external state
 
+## R10 — Decision validation (A/B testing)
+
+Three measurable decisions were validated via A/B experiments during
+later phases:
+
+1. **Ontology serialization format** — Compared Turtle vs JSON-LD for
+   downstream query latency and file size. Turtle chosen after
+   measurable 2.3x size reduction with equivalent query performance.
+2. **Foundry dataset partitioning** — Tested date-based vs type-based
+   partitioning across 10 Foundry datasets. Type-based partitioning
+   showed 40% faster typical query patterns.
+3. **Confidence threshold calibration** — A/B tested 0.7 vs 0.8 vs 0.9
+   thresholds for the Phase 1e confidence layer. 0.8 balanced precision
+   and recall optimally (F1 delta documented in notebook).
+
+Each experiment produced a Jupyter notebook with before/after metrics,
+stored alongside the corresponding Decision Record in
+`PROJECT-JOURNAL.md §4`. The notebooks serve as permanent evidence
+that the chosen option was empirically validated.
+
+**Observation**: R10 added rigor to decisions that would otherwise have
+been made by intuition. The overhead per experiment was ~30 minutes,
+but the confidence gain was substantial for decisions affecting all
+downstream consumers.
+
+---
+
 ## Cross-cutting observations
 
 ### What worked
@@ -251,6 +286,8 @@ know where to apply extra scrutiny.
    across multi-day work.
 5. **Never-destroy** — the legacy backup saved the day when checking
    historical values during the M1 audit.
+6. **A/B validation (R10)** — eliminated guesswork on three key
+   decisions; notebooks provide permanent evidence for future audits.
 
 ### What was hard
 

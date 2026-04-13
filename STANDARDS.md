@@ -1,4 +1,4 @@
-# STANDARDS — dev-standards v0.1.0
+# STANDARDS — dev-standards v0.2.0
 
 > 이 문서는 `dev-standards` 의 **총괄 개요** 입니다.
 > 각 규칙의 상세는 [`rules/`](rules/) 디렉터리의 개별 문서를 참조하세요.
@@ -36,7 +36,7 @@
 
 ---
 
-## 9 Rules Catalog
+## 10 Rules Catalog
 
 | ID | 제목 | 강도 | 한 줄 요약 |
 |:-:|------|:-:|-----------|
@@ -57,7 +57,7 @@
 - 🟡 **SHOULD** — 강력 권장. 예외가 있을 수 있지만 대부분 경우에 적용.
 - 🟢 **MAY** — 선택 사항. 프로젝트 상황에 따라.
 
-현재 v0.1.0 은 MAY 규칙 없음. 향후 언어별 권장 스택 등을 MAY 로 추가 예정.
+현재 v0.2.0 은 MAY 규칙 없음. 향후 언어별 권장 스택 등을 MAY 로 추가 예정.
 
 ---
 
@@ -88,7 +88,7 @@ R6 External deps + R7 Issue classification
   └── 외부 repo 이슈에 severity 부여
 ```
 
-**단일 진입점** (R1 `PROJECT-JOURNAL.md`) 은 다른 8 규칙의 **내비게이션 허브** 입니다.
+**단일 진입점** (R1 `PROJECT-JOURNAL.md`) 은 다른 9 규칙의 **내비게이션 허브** 입니다.
 
 ---
 
@@ -150,7 +150,7 @@ R6 External deps + R7 Issue classification
 
 ```markdown
 standards_source: https://github.com/<org>/dev-standards
-standards_version: 0.1.0
+standards_version: 0.2.0
 ```
 
 ---
@@ -163,7 +163,7 @@ standards_version: 0.1.0
 - **PR**: 명확한 개선 제안
 
 각 PR 은 다음을 포함해야 함:
-- 어느 규칙 (R1~R10) 이 영향 받는지
+- 어느 규칙 (R1–R10) 이 영향 받는지
 - CHANGELOG 업데이트
 - 영향받는 프로젝트에 대한 migration 가이드 (breaking change 시)
 
@@ -173,7 +173,7 @@ standards_version: 0.1.0
 
 - [README.md](README.md) — 이 저장소 소개와 사용법
 - [CHANGELOG.md](CHANGELOG.md) — 버전 이력
-- [rules/](rules/) — 9 규칙의 개별 상세
+- [rules/](rules/) — 10 규칙의 개별 상세
 - [templates/](templates/) — 프로젝트 scaffolding
 - [memory/](memory/) — Claude Code 메모리 규칙
 - [scripts/init-project.sh](scripts/init-project.sh) — 자동 bootstrap

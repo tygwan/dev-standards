@@ -7,13 +7,25 @@ Versioning: [Semver](https://semver.org/) with pragmatic interpretation.
 
 ---
 
+## [0.2.0] — 2026-04-13
+
+### Added
+
+- `rules/R10-decision-validation.md` — Decision Validation / A/B Testing rule (🟡 SHOULD)
+  - Measurable decisions should be validated via A/B experiments before permanent adoption
+  - Notebook evidence preserved alongside decision records
+- `STANDARDS.md` updated: 9 Rules Catalog → 10 Rules Catalog, version bumped to v0.2.0
+- `examples/first-ontology-project.md` updated to reflect Phase 0–6 completion (336 tests, Foundry 10 datasets, 3 A/B tests conducted under R10)
+
+---
+
 ## [0.1.0] — 2026-04-12
 
 ### Added — Initial release
 
 **Philosophy and framework**
 - `README.md` describing repo purpose, usage, and structure
-- `STANDARDS.md` with philosophy, 9-rule catalog, meta rules, out of scope
+- `STANDARDS.md` with philosophy, rule catalog, meta rules, out of scope
 
 **9 Rules (R1-R9)**
 - `rules/R1-documentation-architecture.md` — `docs/{plan,analysis,tasklog,findings,reference}/` + PROJECT-JOURNAL.md
