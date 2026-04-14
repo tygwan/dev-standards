@@ -1,7 +1,7 @@
 # R11 — Portfolio / External Writing
 
 **Strength**: 🟢 MAY
-**Version**: 0.1.0
+**Version**: 0.2.0
 
 ---
 
@@ -258,12 +258,53 @@ just "we used X" but "X was responsible for Y here".
 2. **Plain vocabulary** — Prefer commonly understood words. Acronyms
    and jargon are acceptable only when the audience is expected to know
    them; otherwise define on first use.
-3. **Specific metrics** — Prefer "336 tests passing, 100% Oracle
+3. **Audience-matched terminology** — Use the specific industry-standard
+   name for mainstream technologies and concepts, not an abstracted
+   description or an invented alias. See the subsection below.
+4. **Specific metrics** — Prefer "336 tests passing, 100% Oracle
    agreement" over "extensive testing". Vague claims erode trust.
-4. **Active voice** — "I built X" or "The system does Y", not
+5. **Active voice** — "I built X" or "The system does Y", not
    "X was built".
-5. **Consistent tense** — Stick to past tense for completed work,
+6. **Consistent tense** — Stick to past tense for completed work,
    present tense for ongoing systems.
+
+### Audience-matched Terminology
+
+Rule #2 (plain vocabulary) prohibits unnecessary jargon. Rule #3 is its
+complement: when a concept **does** have a widely-adopted name in the
+relevant industry, use that name.
+
+| Replace this | With this |
+|--------------|-----------|
+| "내부 캐시 서버" / "key-value store" | **Redis** |
+| "관계형 DB" / "데이터베이스 시스템" | **PostgreSQL** / **MySQL** |
+| "HTTP 프록시" / "웹 서버" | **Nginx** (if that is what was used) |
+| "서버 렌더링 프레임워크" | **Next.js** (if that is what was used) |
+| "대부분 요청의 응답시간" | **p95 latency** |
+| "부하 분산기" | **load balancer** (the term most engineers expect) |
+
+**Why.** External readers — recruiters, hiring managers, peer engineers
+— filter many candidates or projects under time pressure. A recognized
+name anchors them instantly to a known set of capabilities and failure
+modes. An unfamiliar term forces them to either investigate (friction)
+or default to a skeptical interpretation (bias).
+
+**How to apply.**
+
+- Name the specific tool or pattern that was actually used. Do not
+  describe it abstractly when a shorter, recognized name exists.
+- When a project overlaps with a mainstream pattern (web service,
+  data pipeline, ML training), expect readers to know the standard
+  stack terms for that domain and use them.
+- If the project uses something genuinely non-mainstream (e.g., a
+  custom protocol), name it and briefly define it on first use.
+- Avoid the reverse trap: do not invent a new label for a mainstream
+  concept in order to sound distinctive. Distinctiveness comes from
+  the decisions, not the labels.
+
+**This is not a license for jargon-stuffing.** The rule is directional:
+use the precise, recognized name *when one exists*. If the reader would
+reasonably not know a term, define it.
 
 ### Anti-patterns
 
@@ -271,6 +312,9 @@ just "we used X" but "X was responsible for Y here".
   Write: "A feeds into B, which then produces C."
 - **Jargon without grounding**: "Leveraged polyglot observability
   fabric" (unclear what was actually done).
+- **Abstracted-away tech names**: "Used an in-memory store" instead of
+  "Used Redis". The reader cannot evaluate the choice if the tool is
+  anonymous.
 - **Unsubstantiated superlatives**: "Revolutionary", "cutting-edge",
   "state-of-the-art" — replace with concrete evidence.
 - **AI hype padding**: If AI was used, describe what it did in one
@@ -280,8 +324,40 @@ just "we used X" but "X was responsible for Y here".
 
 ## Output Adaptation — Depth varies by medium
 
-The same PAAR narrative is portable across media, but the **depth** of
-each problem/solution changes by audience and context.
+### Depth as authenticity
+
+Before the mechanics, a principle: **depth is how engineering
+authenticity is demonstrated**, not an aesthetic preference.
+
+In an era where anyone can generate a polished-sounding project
+description from a tech stack, the differentiating signal is the
+accumulation of specific details that only someone who actually did
+the work would know: a concrete metric, an alternative that was tried
+and rejected, a trade-off that was accepted, an incident that was
+diagnosed and resolved. A portfolio that stays at the surface reads
+as "template-filled" or "AI-generated" even when every word is true.
+
+Depth is built from:
+
+- **Specific numbers** with units and baselines (not "significant
+  improvement" but "F1 52.56% → 88.05% on 4,959 images")
+- **Rejected alternatives** (what else was considered, why it was not
+  chosen — names of the options matter)
+- **Explicit trade-offs** (what was given up, and why that was the
+  right cost to pay)
+- **Named incidents** (a real failure that happened, diagnosed with
+  symptom → root cause → fix → prevention)
+- **Upstream traces** (links to commits, PRs, issues, notebooks that
+  let the reader audit the claim)
+
+A compressed surface-level portfolio paragraph is indistinguishable
+from hundreds of others. A detailed one proves the author was present
+during the decision.
+
+### The same PAAR narrative is portable across media
+
+The narrative is portable, but the **depth** of each problem/solution
+changes by audience and context.
 
 ### Depth levels
 
@@ -318,6 +394,113 @@ else could have been done? What did you do? What was the trade-off?**
 The **content** depth is identical across portfolio/case study media;
 only the presentation layer changes. Resumes are the exception — they
 compress.
+
+---
+
+## Structural Convention for Single-Source Authoring (optional)
+
+When a portfolio stack includes tooling that can parse a project page
+to automatically render both a detailed portfolio view and a compressed
+resume view, R11 recommends the following section convention. This is
+**optional** — PAAR and the two-part narrative do not require it — but
+it enables "edit one page, both views update" workflows.
+
+### Three marker headings
+
+Use three H1 headings as section markers inside a project page body:
+
+```
+# 문제해결        (Problem Solving)
+# 구현            (Implementation)
+# 크로스역량      (Cross-competency, optional)
+```
+
+All other H1 headings (overview, architecture, operational experience,
+visual assets, tech stack, etc.) are treated as contextual content —
+they render only in the portfolio view.
+
+### Under `# 문제해결`
+
+Each H2 under this marker is one problem-solving entry. Its title is
+the compressed resume line. Its body (paragraphs, images, code blocks
+until the next H2 or H1) is the portfolio-view expansion.
+
+**H2 title format**: `[domain] problem + solution + result`
+compressed into one sentence.
+
+```markdown
+# 문제해결
+
+## [Construction CV] Florence-2 + SAM2 의 F1 52.56% 한계를 ResNet-50 few-shot filter 로 해결, F1 88.05% 달성
+
+Why it mattered, what alternatives existed, what was built, how it was
+validated — 2-3 paragraphs of PAAR narrative, plus an image or chart.
+
+## [Label-cost automation] 수작업 7,776시간을 클래스당 5장 K-shot 으로 99% 절감
+
+...
+```
+
+### Under `# 구현`
+
+A bulleted list. Each bullet is one implementation signal line — a
+concrete engineering decision or technical mechanism that demonstrates
+depth. Bullets are shown verbatim in both resume and portfolio views.
+
+```markdown
+# 구현
+
+- ResNet-50 2048-d embeddings + cosine similarity for K-way re-classification
+- Threshold × shot grid search to quantify F1 / recall / retain-rate trade-offs
+- Forked `autodistill` into `modified_packages/` as plugin-style classifier
+```
+
+### Under `# 크로스역량`
+
+A single paragraph or bullet capturing one cross-domain or adjacent
+capability that strengthens the project's signal (publication,
+production deployment, adjacent ecosystem contribution). Optional.
+
+```markdown
+# 크로스역량
+
+Submitted to *Automation in Construction* (under review); methodology
+extended into master's thesis on LMM-based labeling framework.
+```
+
+### Graceful parsing
+
+Implementations of this convention **MUST** be tolerant:
+
+- Match marker names case-insensitively with common variants
+  (e.g., `문제해결`, `문제 해결`, `Problem Solving`, `problem-solving`)
+- Fall back to a simpler rendering (one-liner, legacy fields) when the
+  markers are missing. Do not fail.
+- Do not enforce heading levels rigidly — accept H1 or H2 markers if
+  consistently used.
+
+A strict parser that breaks when a heading is slightly reworded defeats
+the purpose of the convention. The convention is a recommendation for
+authors who want the auto-render benefit; it is not a wall.
+
+### Why this works
+
+- **Single edit surface**: the author writes one page; both views stay
+  in sync
+- **Narrative preserved**: H2 + paragraphs retain full PAAR flow
+- **Resume is compression, not rewrite**: the compression is literally
+  "extract titles + bullets"
+- **Visual assets in place**: images live under the H2 they illustrate,
+  so they appear in portfolio but are skipped in resume
+- **Contextual sections unaffected**: `# Overview`, `# Architecture`,
+  `# 운영경험`, `# 기술 스택` remain portfolio-only because they are
+  not marker headings
+
+### Reference implementation
+
+The portfolio site at <https://github.com/tygwan/portfolio> uses this
+convention. See `src/lib/notion.ts` for the `getProjectResumeSummary`
+parser and `src/app/resume/page.tsx` for the dual-view rendering.
 
 ---
 

@@ -7,6 +7,24 @@ Versioning: [Semver](https://semver.org/) with pragmatic interpretation.
 
 ---
 
+## [0.4.0] — 2026-04-14
+
+### Added
+
+- **R11 expanded to v0.2.0** — three additive sections based on real-world application in the reference portfolio
+  - **Audience-matched terminology** (new Writing Style rule #3): use industry-standard names like Redis / PostgreSQL / Nginx / Next.js / p95 latency when a concept has a widely-adopted label; avoid abstracted descriptions and invented aliases for mainstream concepts. Complements (not replaces) the plain-vocabulary rule
+  - **Depth as authenticity** (new principle in Output Adaptation): depth is how engineering authenticity is demonstrated — specific metrics, rejected alternatives, explicit trade-offs, named incidents, upstream traces. A compressed surface-level portfolio reads as template-filled; detail proves presence during the decision
+  - **Structural Convention for Single-Source Authoring** (new optional section): three marker H1 headings (`# 문제해결` / `# 구현` / `# 크로스역량`) enable tooling to auto-render both portfolio (detailed) and resume (compressed) views from one page. Graceful parsing required (tolerant matching, fallback on missing markers, no rigid heading-level enforcement)
+- `STANDARDS.md` updated: R11 catalog line extended to reference the new axes; version bumped to v0.4.0
+- `CHANGELOG.md` entry clarifies that all three additions were discovered while applying R11 to the reference portfolio, validating the "rules evolve through use" design
+
+### Notes
+
+- R11 v0.1.0 → v0.2.0 is additive; all prior R11 content (PAAR, two-part narrative, visual asset checklist, enrichment sections, depth-level table) is retained unchanged
+- The marker convention is explicitly optional: R11 compliance does not require it. Authors without auto-render tooling can continue with plain narrative structure and still satisfy R11
+
+---
+
 ## [0.3.0] — 2026-04-14
 
 ### Added

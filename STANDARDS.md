@@ -1,4 +1,4 @@
-# STANDARDS — dev-standards v0.3.0
+# STANDARDS — dev-standards v0.4.0
 
 > 이 문서는 `dev-standards` 의 **총괄 개요** 입니다.
 > 각 규칙의 상세는 [`rules/`](rules/) 디렉터리의 개별 문서를 참조하세요.
@@ -50,7 +50,7 @@
 | **R8** | [Human-AI collaboration](rules/R8-human-ai-collaboration.md) | 🟡 SHOULD | Trade-off 분석, escalation, Claude Code 메모리 규칙 |
 | **R9** | [Provenance and reproducibility](rules/R9-provenance-reproducibility.md) | 🟡 SHOULD | 외부 의존성 버전 고정, 재현 가능한 audit |
 | **R10** | [Decision validation (A/B testing)](rules/R10-decision-validation.md) | 🟡 SHOULD | 측정 가능한 결정은 A/B 실험으로 검증 후 채택 |
-| **R11** | [Portfolio / External writing](rules/R11-portfolio-writing.md) | 🟢 MAY | 외부 발표용 글은 PAAR + 2-part narrative + 시각 자료 체크리스트 |
+| **R11** | [Portfolio / External writing](rules/R11-portfolio-writing.md) | 🟢 MAY | 외부 발표용 글은 PAAR + 2-part narrative + 시각 자료 + 업계 표준 용어 + depth-as-authenticity + 단일 소스 marker 규약 |
 
 ### 강도 (Rule Strength)
 
@@ -58,8 +58,9 @@
 - 🟡 **SHOULD** — 강력 권장. 예외가 있을 수 있지만 대부분 경우에 적용.
 - 🟢 **MAY** — 선택 사항. 프로젝트 상황에 따라.
 
-v0.3.0 에서 최초의 MAY 규칙(R11) 추가. 프로젝트를 외부 독자에게 전달하는
-글쓰기 규칙이며, 내부 개발에는 적용되지 않음.
+v0.3.0 에서 최초의 MAY 규칙(R11) 추가, v0.4.0 에서 R11 을 v0.2.0 으로 확장:
+업계 표준 용어(audience-matched terminology), 깊이가 진정성이다
+(depth-as-authenticity), 단일 소스 marker 규약(# 문제해결 / # 구현 / # 크로스역량).
 
 ---
 
