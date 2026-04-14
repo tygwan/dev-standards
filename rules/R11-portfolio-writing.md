@@ -278,18 +278,46 @@ just "we used X" but "X was responsible for Y here".
 
 ---
 
-## Output Adaptation
+## Output Adaptation — Depth varies by medium
 
-The same PAAR narrative should be portable across media:
+The same PAAR narrative is portable across media, but the **depth** of
+each problem/solution changes by audience and context.
+
+### Depth levels
+
+| Depth | Resume / CV | Portfolio / Case study |
+|-------|-------------|----------------------|
+| Problem | 1 sentence | 1~2 paragraphs — symptom, impact, why it mattered |
+| Decision | Not included | 1 paragraph — what alternatives existed, why this one |
+| Solution | 1 sentence | 1~2 paragraphs — concrete mechanism, technical detail |
+| Trade-offs | Not included | 1 paragraph — what was given up, why acceptable |
+| Result | 1 metric | 1 paragraph — metric + how measured + what it changed |
+
+### Rule
+
+- **Resume / CV**: state problem + solution in ~2 lines. The reader
+  has ~30 seconds per item; compression is the goal.
+- **Portfolio / Case study**: expand each problem to show the
+  **reasoning process**. The reader is evaluating judgment, not just
+  outcome. A portfolio that skips to the result looks no different from
+  "we built X" — the differentiating content lives in the middle.
+
+Rule of thumb: a portfolio paragraph about one problem should answer
+all five of these questions: **What happened? Why did it matter? What
+else could have been done? What did you do? What was the trade-off?**
+
+### Medium-specific adaptation
 
 | Medium | Adaptation |
 |--------|-----------|
-| **Notion page** | Headings + paragraphs + callouts for metrics + image blocks |
-| **Markdown README** | `##` headings, fenced code for terminal output, images via relative paths |
-| **Web portfolio** | Structured sections with typography scale, embedded assets |
-| **PDF resume** | Compress to one paragraph per part, cite the longer version |
+| **Notion page** | Full depth, heading per problem, callouts for metrics, image blocks |
+| **Markdown README** | Full depth, fenced code for terminal output, images via relative paths |
+| **Web portfolio** | Full depth with typography scale, embedded assets |
+| **PDF resume** | Compressed: one bullet per problem, link to portfolio for detail |
 
-Keep the **content identical**; only the presentation layer changes.
+The **content** depth is identical across portfolio/case study media;
+only the presentation layer changes. Resumes are the exception — they
+compress.
 
 ---
 
