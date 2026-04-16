@@ -7,6 +7,35 @@ Versioning: [Semver](https://semver.org/) with pragmatic interpretation.
 
 ---
 
+## [0.5.0] — 2026-04-17
+
+### Added
+
+- `rules/R12-technical-blog-writing.md` — Technical Blog Writing rule (🟢 MAY)
+  - Second MAY rule in the catalog; applies to public blog writing, distinct from R11 (portfolio/resume)
+  - Six post types, each with its own minimum structure, length guide, and voice convention:
+    - **(1) 기술 고찰 / Deep-dive** — specific technology or decision analysis (1,500–3,000자)
+    - **(2) 프로젝트 회고 / Retrospective** — honest lessons learned, including failures (2,000–4,000자)
+    - **(3) 범프로젝트 인사이트 / Synthesis** — pattern drawn from ≥3 cases (1,500–3,000자)
+    - **(4) 문제해결 노트 / Troubleshooting** — diagnostic timeline with named root cause (800–2,000자)
+    - **(5) 비교·가이드 / Comparison** — steelmanned side-by-side with explicit selection criteria (1,000–2,500자)
+    - **(6) 튜토리얼 / Tutorial** — reproducible step-by-step with verification at each step (1,500–5,000자)
+  - Shared foundation inherited from R11: Task-over-Tech, Audience-matched terminology, Depth-as-authenticity, Writing style rules
+  - Blog-unique principles: Hook first (3 sentences answering "why keep reading?"), prerequisite line, personal-voice allowance, type-specific visual asset minimums
+  - Post metadata convention: type / reader_level / prerequisite / read_time / related_projects declared at top of post
+  - Cross-linking with R11 portfolio: portfolio page compresses, blog post expands; recommended bidirectional links between the two depths
+  - Per-type anti-patterns (deep-dive without rejected alternatives, retrospective without failures, synthesis with one example, troubleshooting that skips to the answer, comparison with straw-man option, tutorial not runnable as written)
+  - Explicit evolution clause: write down deviations so the rule improves with each post
+- `STANDARDS.md` updated: 11 Rules → 12 Rules; meta rule diagram extended to show R3 / R4 / R8 / R10 → R12 and R11 ↔ R12 cross-link; version bumped to v0.5.0
+
+### Notes
+
+- R12 is a sibling of R11, not a hierarchy: R11 documents **what you did** for external evaluation (portfolio, resume), R12 documents **how you think** for public consumption (blog). The same project can produce both, at different depths
+- R12 inherits the entire R11 shared foundation unchanged; blog writing that violates R11 principles fails R12 even if type-specific structure is correct
+- The six post types are a starting menu, not a closed set. When a writer finds a post that fits none of the six, R12's evolution clause encourages proposing a 7th type with a worked example
+
+---
+
 ## [0.4.0] — 2026-04-14
 
 ### Added

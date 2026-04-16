@@ -1,4 +1,4 @@
-# STANDARDS — dev-standards v0.4.0
+# STANDARDS — dev-standards v0.5.0
 
 > 이 문서는 `dev-standards` 의 **총괄 개요** 입니다.
 > 각 규칙의 상세는 [`rules/`](rules/) 디렉터리의 개별 문서를 참조하세요.
@@ -36,7 +36,7 @@
 
 ---
 
-## 11 Rules Catalog
+## 12 Rules Catalog
 
 | ID | 제목 | 강도 | 한 줄 요약 |
 |:-:|------|:-:|-----------|
@@ -51,6 +51,7 @@
 | **R9** | [Provenance and reproducibility](rules/R9-provenance-reproducibility.md) | 🟡 SHOULD | 외부 의존성 버전 고정, 재현 가능한 audit |
 | **R10** | [Decision validation (A/B testing)](rules/R10-decision-validation.md) | 🟡 SHOULD | 측정 가능한 결정은 A/B 실험으로 검증 후 채택 |
 | **R11** | [Portfolio / External writing](rules/R11-portfolio-writing.md) | 🟢 MAY | 외부 발표용 글은 PAAR + 2-part narrative + 시각 자료 + 업계 표준 용어 + depth-as-authenticity + 단일 소스 marker 규약 |
+| **R12** | [Technical blog writing](rules/R12-technical-blog-writing.md) | 🟢 MAY | 블로그 포스트는 6개 유형(고찰·회고·인사이트·문제해결·비교·튜토리얼) 중 하나 선언 + 유형별 최소 구조·길이·문체, R11 원칙 상속 |
 
 ### 강도 (Rule Strength)
 
@@ -61,6 +62,9 @@
 v0.3.0 에서 최초의 MAY 규칙(R11) 추가, v0.4.0 에서 R11 을 v0.2.0 으로 확장:
 업계 표준 용어(audience-matched terminology), 깊이가 진정성이다
 (depth-as-authenticity), 단일 소스 marker 규약(# 문제해결 / # 구현 / # 크로스역량).
+v0.5.0 에서 R12 (Technical Blog Writing) 추가: 포트폴리오(R11)와 분리된
+블로그 고유의 6개 포스트 유형(기술고찰·회고·인사이트·문제해결·비교·튜토리얼)과
+유형별 최소 구조, R11 원칙 상속, 양방향 cross-linking 규약.
 
 ---
 
@@ -94,9 +98,17 @@ R1 + R4 + R10
   └── 내부 문서화 산출물이 R11 외부 글쓰기의 raw material
         ↓
         └── R11 이 PAAR + 2-part narrative 로 재구성
+
+R3 + R4 + R8 + R10
+  └── 내부 문서화 산출물이 R12 블로그의 raw material
+        ↓
+        └── R12 가 6개 유형(고찰·회고·인사이트·문제해결·비교·튜토리얼)
+              중 하나를 선언하여 대중적 depth 로 재구성
+        ↓
+        └── R11 ↔ R12 양방향 cross-link (포트폴리오는 압축, 블로그는 확장)
 ```
 
-**단일 진입점** (R1 `PROJECT-JOURNAL.md`) 은 다른 10 규칙의 **내비게이션 허브** 입니다.
+**단일 진입점** (R1 `PROJECT-JOURNAL.md`) 은 다른 11 규칙의 **내비게이션 허브** 입니다.
 
 ---
 
