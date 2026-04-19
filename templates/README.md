@@ -16,6 +16,7 @@ Templates are starter artifacts that make adoption easier without forcing one ex
 - dependency inventory
 - verification checklist
 - exception record
+- competency checklist
 
 ### Composition templates
 
@@ -39,3 +40,4 @@ Templates are starter artifacts that make adoption easier without forcing one ex
 - [navigability/interface-catalog.md](/home/coffin/dev/AgenticLabeling/docs/plans/dev-standards-publishable-package/templates/navigability/interface-catalog.md)
 - [navigability/failure-memory-index.md](/home/coffin/dev/AgenticLabeling/docs/plans/dev-standards-publishable-package/templates/navigability/failure-memory-index.md)
 - [navigability/where-to-edit-guide.md](/home/coffin/dev/AgenticLabeling/docs/plans/dev-standards-publishable-package/templates/navigability/where-to-edit-guide.md)
+- [competency/competency-checklist.md](/home/coffin/dev/AgenticLabeling/docs/plans/dev-standards-publishable-package/templates/competency/competency-checklist.md)

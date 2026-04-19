@@ -15,6 +15,7 @@ This repository is designed to apply across project subjects without assuming a 
 ## Read First
 
 - [STANDARDS.md](STANDARDS.md)
+- [COMPETENCY.md](COMPETENCY.md)
 - [core/](core/README.md)
 - [profiles/](profiles/README.md)
 - [adapters/](adapters/README.md)
@@ -35,3 +36,7 @@ The purpose of `dev-standards` is to standardize engineering behavior in areas s
 
 It does not prescribe one programming language, architecture style, testing framework, or deployment model.
 
+## Companion Documents
+
+- `STANDARDS.md` defines what must be true
+- `COMPETENCY.md` defines how deeply those standards can be applied
