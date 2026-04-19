@@ -2,14 +2,26 @@
 
 Adapters are tool or ecosystem specific application guides.
 
-They operationalize the standard in specific environments and must not redefine the core.
+They should:
 
-## Catalog
+- operationalize the standard in a specific environment
+- remain replaceable
+- never redefine the core
 
-1. [A0-adapter-contract.md](A0-adapter-contract.md)
-2. [A1-github.md](A1-github.md)
-3. [A2-claude-code.md](A2-claude-code.md)
-4. [A3-python.md](A3-python.md)
-5. [A4-typescript.md](A4-typescript.md)
-6. [A5-ci.md](A5-ci.md)
+## Initial Adapter Catalog
 
+- `github`
+- `claude-code`
+- `project-memory`
+- `python`
+- `typescript`
+- `ci`
+
+## Authoring Standard
+
+Each adapter should answer:
+
+- when to activate it
+- which core rules or profiles it operationalizes
+- what tool-specific behavior it adds
+- what it intentionally does not cover
