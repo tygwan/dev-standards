@@ -5,6 +5,7 @@ CREATE TABLE memory_entries (
     summary TEXT NOT NULL,
     content TEXT NOT NULL,
     tags TEXT,
+    metadata_json TEXT,
     source_kind TEXT,
     source_ref TEXT,
     module_scope TEXT,
@@ -27,4 +28,3 @@ CREATE TABLE memory_links (
 
 CREATE INDEX idx_memory_links_from ON memory_links(from_memory_id);
 CREATE INDEX idx_memory_links_to ON memory_links(to_memory_id);
-

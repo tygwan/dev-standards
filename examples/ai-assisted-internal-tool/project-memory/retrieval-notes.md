@@ -18,6 +18,7 @@ Retrieve the highest-value project memory for a task without replaying full tran
 - decision records
 - failure records
 - resolved techniques
+- confirmed constraints
 
 ## Lower-Value Sources
 
@@ -33,4 +34,4 @@ For a task scoped to `src/api/auth`:
 - rank `category IN ('failure', 'decision', 'technique')`
 - boost entries with matching tags
 - return summary first, content second
-
+- always keep the authoritative source link visible
